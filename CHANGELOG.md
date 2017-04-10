@@ -1,5 +1,10 @@
 # OctoPrint Changelog
 
+## 1.3.3
+
+-added PNG support
+
+
 ## 1.3.2 (2017-03-16)
 
 ### Note for plugin authors
