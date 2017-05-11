@@ -1100,8 +1100,8 @@ def restricted_access(func):
 	@functools.wraps(func)
 	def decorated_view(*args, **kwargs):
 		# if OctoPrint hasn't been set up yet, abort
-		if settings().getBoolean(["server", "firstRun"]) and settings().getBoolean(["accessControl", "enabled"]) and (octoprint.server.userManager is None or not octoprint.server.userManager.hasBeenCustomized()):
-			return flask.make_response("OctoPrint isn't setup yet", 403)
+		# if settings().getBoolean(["server", "firstRun"]) and settings().getBoolean(["accessControl", "enabled"]) and (octoprint.server.userManager is None or not octoprint.server.userManager.hasBeenCustomized()):
+		# 	return flask.make_response("OctoPrint isn't setup yet", 403)
 
 		return flask.ext.login.login_required(func)(*args, **kwargs)
 
