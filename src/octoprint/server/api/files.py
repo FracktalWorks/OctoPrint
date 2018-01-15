@@ -706,6 +706,11 @@ def deleteGcodeFile(filename, target):
 			printer.delete_sd_file(filename)
 		else:
 			fileManager.remove_file(target, filename)
+			try:
+				fileManager.remove_file(target, filename.replace(".gcode", ".png"))
+			except:
+				pass
+
 
 	elif _verifyFolderExists(target, filename):
 		if not target in [FileDestinations.LOCAL]:
